@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
+
 
 @Component({
   selector: 'app-root',
