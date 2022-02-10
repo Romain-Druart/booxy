@@ -1,0 +1,1 @@
+export const SERVER_API = 'http://172.16.8.170:7700/';
