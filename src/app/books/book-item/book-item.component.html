@@ -1,42 +1,37 @@
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center" *ngIf="book">
     <div class="bg-white rounded-3xl border shadow-xl p-8 w-3/6">
         <div class="flex justify-between items-center mb-4">
             <div class="shrink-0 w-60">
-                <img src="../../../assets/images/pg49345.cover.medium.jpg">
+                <img src="{{book.cover}}">
             </div>
             <div class="grid gap-2">
                 <div>
                     <h3 class="font-semibold text-sm text-gray-400">Title</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">
-                        The Declaration of Independence of the United States of America</h1>
+                    <h1 class="font-semibold text-sm text-gray-700">{{book.title}}</h1>
                 </div>
                 <div>
                     <h3 class="font-semibold text-sm text-gray-400">Language</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">
-                        en</h1>
+                    <h1 class="font-semibold text-sm text-gray-700">{{book.language}}</h1>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Right</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">
-                        Public domain in the USA.</h1>
+                    <h3 class="font-semibold text-sm text-gray-400">Rights</h3>
+                    <h1 class="font-semibold text-sm text-gray-700">{{book.rights}}</h1>
                 </div>
                 <div>
                     <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
                     <ul>
-                        <li>
+                        <li *ngFor="let subject of book.subject">
                             <h1 class="font-semibold text-sm text-gray-700">
-                                History</h1>
+                                {{subject}}</h1>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold text-sm text-gray-400">Cover</h3>
-                    <h1 class="font-semibold text-sm text-gray-700 link-words">
-                        https://www.gutenberg.org/cache/epub/1/pg1.cover.medium.jpg</h1>
+                    <a href="{{book.cover}}" class="font-semibold text-sm text-gray-700 link-words">
+                        {{book.cover}}</a>
                 </div>
             </div>
-        </div>
-        <div>
         </div>
     </div>
 </div>

@@ -1,11 +1,27 @@
-<div class="grid gap-4 mt-10">
-    <div class="flex justify-center">
-        <h2 class="tracking-tight text-gray-400">Hits:&nbsp;<span class="text-orange-500 mr-5">10</span>
-        </h2>
-        <h2 class="tracking-tight text-gray-400">Times:&nbsp;<span class="text-orange-500">10 ms</span>
-        </h2>
-    </div>
+<ng-container *ngIf="books && books.length && books.length > 0;else emptyBooks">
+    <div class="grid gap-4 mt-10">
+        <div class="flex justify-center">
+            <h2 *ngIf="nbHits" class="tracking-tight text-gray-400">Hits:&nbsp;<span
+                    class="text-orange-500 mr-5">{{nbHits}}</span>
+            </h2>
+            <h2 *ngIf="times" class="tracking-tight text-gray-400">Times:&nbsp;<span class="text-orange-500">{{times}}
+                    ms</span>
+            </h2>
+        </div>
 
-    <!--Liste des livres-->
-    <book-item></book-item>
-</div>
+        <!--Liste des livres-->
+        <ng-container *ngFor="let book of books">
+            <book-item [book]="book"></book-item>
+        </ng-container>
+    </div>
+</ng-container>
+
+<ng-template #emptyBooks>
+    <div class="grid gap-4 mt-10">
+        <div class="flex justify-center">
+            <h2 class="tracking-tight text-gray-400"><span class="text-orange-500 mr-5">Aucun
+                    résultat :(</span>
+            </h2>
+        </div>
+    </div>
+</ng-template>

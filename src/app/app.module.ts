@@ -9,21 +9,23 @@ import { BooksComponent } from './books/books.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookItemComponent } from './books/book-item/book-item.component';
+import { BooksModule } from './books/books.module';
+import { BooksService } from './books/books.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BooksComponent,
-    BooksListComponent,
-    BookItemComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BooksModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

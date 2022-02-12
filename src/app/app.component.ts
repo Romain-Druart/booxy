@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IBook } from './books/book.model';
 
 
 @Component({
@@ -8,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'booxy';
+  nbHits: number | null;
+  times: number | null;
+  books: IBook[] | null;
+
+  constructor() {
+    this.nbHits = null
+    this.times = null;
+    this.books = null;
+  }
+
+  updateNbHits(value: any) {
+    this.nbHits = value;
+  }
+  updateTimes(value: any) {
+    this.times = value;
+  }
+  updateBooks(value: any) {
+    this.books = value;
+  }
 }
