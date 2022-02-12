@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
-   * @param event 
+   * Met à jour la liste de livres, du nombre de livre et le temps de requete après une recherche 
    */
   searchBooks(event: EventTarget | null) {
     if (event) {

@@ -19,6 +19,9 @@ export class AppComponent {
     this.books = null;
   }
 
+  /**
+   * Met à jour des données dans le composant books
+   */
   updateNbHits(value: any) {
     this.nbHits = value;
   }
