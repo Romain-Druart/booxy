@@ -6,18 +6,24 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './header/header.component';
 import { BooksComponent } from './books/books.component';
+import { BooksListComponent } from './books/books-list/books-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookItemComponent } from './books/book-item/book-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BooksComponent
+    BooksComponent,
+    BooksListComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
