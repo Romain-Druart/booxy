@@ -1,6 +1,5 @@
 <div class="bg-black">
     <div class="px-4 py-5 shadow-xl sm:px-6">
-
         <div class="flex justify-between">
             <div>
                 <img class="h-12 md:inline-block md:h-14 md:mb-2" src="../../assets/images/Booxy_Logo_Temp.svg">
@@ -19,7 +18,7 @@
                             <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
                         </span>
                     </div>
-                    <input type="text" name="price" id="price"
+                    <input (change)="searchBooks($event.target)" type="text" name="price" id="price"
                         class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-7 pr-12 sm:text-sm border-orange-300 border-2 rounded-md">
                 </div>
             </div>

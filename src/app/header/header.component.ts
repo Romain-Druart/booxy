@@ -30,11 +30,21 @@ export class HeaderComponent implements OnInit {
   searchBooks(event: EventTarget | null) {
     if (event) {
       const target = event as HTMLInputElement;
-      this.bookService.search(target.value).subscribe(resp => {
-        if (resp.body?.hits) this.books.emit(resp.body.hits)
-        if (resp.body?.nbHits) this.nbHits.emit(resp.body.nbHits);
-        if (resp.body?.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
-      })
+      if (target.value != '' && target.value.length > 0) {
+        this.bookService.search(target.value).subscribe(resp => {
+          if (resp.body?.hits) this.books.emit(resp.body.hits)
+          if (resp.body?.nbHits) this.nbHits.emit(resp.body.nbHits);
+          if (resp.body?.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
+        })
+      } else if (target.value === '') {
+        this.bookService.get().subscribe(resp => {
+          if (resp.body) {
+            this.books.emit(resp.body)
+            this.nbHits.emit(resp.body.length)
+            this.times.emit(undefined);
+          }
+        })
+      }
     }
   }
 

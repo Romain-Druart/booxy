@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center" *ngIf="book">
+<!-- <div class="flex items-center justify-center" *ngIf="book">
     <div class="bg-white rounded-3xl border shadow-xl p-8 w-3/6">
         <div class="flex justify-between items-center mb-4">
             <div class="shrink-0 w-60">
@@ -34,4 +34,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<ng-container *ngIf="book">
+    <div class="flex items-center justify-center  overflow-hidden">
+        <img class="h-64 w-48  rounded-lg shadow-black  flex-shrink-0 block" src="{{book.cover}}">
+    </div>
+</ng-container>

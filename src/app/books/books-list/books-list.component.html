@@ -1,25 +1,54 @@
-<ng-container *ngIf="books && books.length && books.length > 0;else emptyBooks">
+<!-- <ng-container *ngIf="books && books.length && books.length > 0;else emptyBooks">
     <div class="grid gap-4 mt-10">
         <div class="flex justify-center">
             <h2 *ngIf="nbHits" class="tracking-tight text-gray-400">Hits:&nbsp;<span
-                    class="text-orange-500 mr-5">{{nbHits}}</span>
+                    class="text-orange-300 mr-5">{{nbHits}}</span>
             </h2>
             <h2 *ngIf="times" class="tracking-tight text-gray-400">Times:&nbsp;<span class="text-orange-500">{{times}}
                     ms</span>
             </h2>
-        </div>
+        </div> -->
 
-        <!--Liste des livres-->
+<!--Liste des livres-->
+<!-- <ng-container *ngFor="let book of books">
+            <book-item [book]="book"></book-item>
+        </ng-container>
+    </div>
+</ng-container> -->
+
+<!-- <ng-template #emptyBooks>
+    <div class="grid gap-4 mt-10">
+        <div class="flex justify-center">
+            <h2 class="tracking-tight text-gray-400"><span class="text-orange-300 mr-5">Aucun
+                    résultat :(</span>mais
+            </h2>
+        </div>
+    </div>
+</ng-template> -->
+
+<ng-container *ngIf="books && books.length && books.length > 0">
+    <div class="flex justify-center mt-6">
+        <h2 *ngIf="nbHits" class="tracking-tight text-gray-400">Hits:&nbsp;<span
+                class="text-orange-300 mr-5">{{nbHits}}</span>
+        </h2>
+        <h2 *ngIf="times" class="tracking-tight text-gray-400">Times:&nbsp;<span class="text-orange-300">{{times}}
+                ms</span>
+        </h2>
+    </div>
+    <div class="px-10 py-3 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
         <ng-container *ngFor="let book of books">
             <book-item [book]="book"></book-item>
         </ng-container>
     </div>
 </ng-container>
 
+
+
+
 <ng-template #emptyBooks>
     <div class="grid gap-4 mt-10">
         <div class="flex justify-center">
-            <h2 class="tracking-tight text-gray-400"><span class="text-orange-500 mr-5">Aucun
+            <h2 class="tracking-tight text-gray-400"><span class="text-orange-300 mr-5">Aucun
                     résultat :(</span>
             </h2>
         </div>
