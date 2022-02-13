@@ -1,33 +1,29 @@
-<div class="relative bg-white dark:bg-gray">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-            <div class="flex justify-between">
-                <div>
-                    <!-- <a href=" #">
-                        <span class="sr-only">Workflow</span>
-                        <img class="h-8 w-auto sm:h-10"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-                    </a> -->
-                    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Booxy</h2>
-                </div>
-                <div>
-                    <div class="mt-1 relative rounded-md shadow-sm">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <span class="text-gray-500 sm:text-sm">
-                                <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-                            </span>
-                        </div>
-                        <input type="text" name="searchInput" id="searchInput"
-                            class="placeholder:text-slate-400 focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 pr-20 sm:text-sm border-gray-300 rounded-md shadow-md"
-                            placeholder="Rechercher" (change)="searchBooks($event.target)">
+<div class="bg-black">
+    <div class="px-4 py-5 shadow-xl sm:px-6">
+
+        <div class="flex justify-between">
+            <div>
+                <img class="h-12 md:inline-block md:h-14 md:mb-2" src="../../assets/images/Booxy_Logo_Temp.svg">
+                <span class="hidden text-2xl font-bold text-orange-300 md:inline-block ml-2 ">Boo<span
+                        class="text-white">xy</span>
+                    <span class="hidden text-sm font-light text-orange-300 md:block">Gutenberg Project, en
+                        mieux :D</span>
+                </span>
+
+            </div>
+            <div>
+
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm">
+                            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+                        </span>
                     </div>
-                </div>
-                <div>
-                    <a href=" #">
-                        <fa-icon class="w-8 h-8" [icon]="faCodeFork"></fa-icon>
-                    </a>
+                    <input type="text" name="price" id="price"
+                        class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-7 pr-12 sm:text-sm border-orange-300 border-2 rounded-md">
                 </div>
             </div>
+
         </div>
     </div>
 </div>
