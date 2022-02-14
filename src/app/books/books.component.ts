@@ -25,9 +25,11 @@ export class BooksComponent implements OnInit {
    * @returns fetch la liste des livres
    */
   getBooks() {
-    this.booksService.get().subscribe(resp => {
-      this.books = resp.body;
+    this.booksService.search('').subscribe(resp => {
+      if (resp.body?.hits) this.books = resp.body.hits;
+      if (resp.body?.nbHits) this.times = resp.body.nbHits;
       if (this.books) this.nbHits = this.books.length;
+
     })
   }
 

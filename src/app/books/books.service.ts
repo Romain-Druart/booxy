@@ -15,22 +15,23 @@ export class BooksService {
 
   /**
    * 
-   * @returns la liste des livres
-   */
-  get(): Observable<HttpResponse<IBook[]>> {
-    return this.http.get<IBook[]>(`${this.resourceUrl}/documents`, {
-      observe: 'response',
-    });
-  }
-
-
-  /**
-   * 
    * @param query 
    * @returns une liste de livres en fonction du mot saisie
    */
-  search(query: string): Observable<HttpResponse<ISearchHits>> {
-    return this.http.get<ISearchHits>(`${this.resourceUrl}/search?q=${query}`, {
+  search(query: string, page?: number): Observable<HttpResponse<ISearchHits>> {
+    let body = {}
+    if (query != '' && query != ' ') {
+      body = {
+        q: query,
+        attributesToHighlight: ["*"]
+      }
+    } else {
+      body = {
+        q: query
+      }
+    }
+
+    return this.http.post<ISearchHits>(`${this.resourceUrl}/search`, body, {
       observe: 'response',
     });
   }

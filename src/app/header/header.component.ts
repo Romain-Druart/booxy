@@ -37,11 +37,11 @@ export class HeaderComponent implements OnInit {
           if (resp.body?.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
         })
       } else if (target.value === '') {
-        this.bookService.get().subscribe(resp => {
+        this.bookService.search('').subscribe(resp => {
           if (resp.body) {
-            this.books.emit(resp.body)
-            this.nbHits.emit(resp.body.length)
-            this.times.emit(undefined);
+            this.books.emit(resp.body.hits)
+            this.nbHits.emit(resp.body.nbHits)
+            this.times.emit(resp.body.processingTimeMs);
           }
         })
       }

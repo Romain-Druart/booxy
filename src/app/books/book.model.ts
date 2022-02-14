@@ -14,4 +14,5 @@ export interface ISearchHits {
     offset?: number;
     processingTimeMs?: number;
     query?: string;
+    _formatted?: any;
 }
