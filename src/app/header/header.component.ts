@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { faMagnifyingGlass, faCodeFork } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCodeFork, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IBook } from '../books/book.model';
 import { BooksService } from '../books/books.service';
 
@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   faMagnifyingGlass: any = faMagnifyingGlass;
   faCodeFork: any = faCodeFork;
+  faPlus: any = faPlus;
   @Output() books = new EventEmitter<IBook[]>();
   @Output() nbHits = new EventEmitter<number>();
   @Output() times = new EventEmitter<number>();
@@ -35,6 +36,21 @@ export class HeaderComponent implements OnInit {
       if (resp.body?.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
       if (resp.body?.nbHits) this.nbHits.emit(resp.body?.nbHits);
     })
+  }
+
+  /**
+   * Ajoute un livre à l'index 
+   * @param event 
+   */
+  addBook(event: EventTarget | null) {
+    if (event) {
+      const target = event as HTMLInputElement;
+      if (target.value && target.value != ' ') {
+        this.booksService.add(parseInt(target.value)).subscribe(resp => {
+          this.getBooks();
+        })
+      }
+    }
   }
 
 
