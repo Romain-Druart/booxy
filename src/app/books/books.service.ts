@@ -18,9 +18,21 @@ export class BooksService {
    * @param query 
    * @returns une liste de livres en fonction du mot saisie
    */
-  search(query: string, page?: number): Observable<HttpResponse<ISearchHits>> {
+  search(query: string, offset?: number): Observable<HttpResponse<ISearchHits>> {
     let body = {}
-    if (query != '' && query != ' ') {
+    if (offset && offset > 0 && (query === '' || query === ' ')) {
+      body = {
+        q: query,
+        offset: offset,
+      }
+    }
+    else if (offset && offset > 0) {
+      body = {
+        q: query,
+        attributesToHighlight: ["*"],
+        offset: offset
+      }
+    } else if (query != '' && query != ' ') {
       body = {
         q: query,
         attributesToHighlight: ["*"]

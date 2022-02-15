@@ -1,2 +1,4 @@
-<app-header (books)="updateBooks($event)" (times)="updateTimes($event)" (nbHits)="updateNbHits($event)"></app-header>
-<books [books]="books" [times]="times" [nbHits]="nbHits"></books>
+<app-header (books)="updateBooks($event)" (times)="updateTimes($event)" (nbHits)="updateNbHits($event)"
+    (query)="updateQuery($event)"></app-header>
+<books [books]="books" [times]="times" [nbHits]="nbHits" [query]='query'>
+</books>

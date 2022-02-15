@@ -5,12 +5,14 @@ import { BooksListComponent } from './books-list/books-list.component';
 import { BooksComponent } from './books.component';
 import { BooksService } from './books.service';
 import { MatDialogModule } from '@angular/material/dialog'
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        MatDialogModule
+        MatDialogModule,
+        InfiniteScrollModule
     ],
     providers: [BooksService],
     declarations: [BooksComponent, BookItemComponent, BooksListComponent],

@@ -13,6 +13,8 @@ import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -27,9 +29,12 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
     FontAwesomeModule,
     BrowserAnimationsModule,
     BooksModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
