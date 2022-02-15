@@ -13,12 +13,13 @@ export class BooksListComponent implements OnInit {
   @Input() nbHits?: number | null;
   @Input() times?: number | null;
   @Input() query?: string | null;
-  selector: string = '.yolo';
+  selector: string;
   offset: number | null;
 
 
   constructor(private booksService: BooksService) {
     this.offset = 0;
+    this.selector = '.books-container';
   }
 
   ngOnInit(): void {
@@ -40,5 +41,4 @@ export class BooksListComponent implements OnInit {
       }
     }
   }
-
 }
