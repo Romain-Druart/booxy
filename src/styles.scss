@@ -7,3 +7,19 @@
 
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dialog-responsive {
+    width: 50%;
+    height: 50%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .dialog-responsive {
+        width: 70%;
+        height: 50%;
+        min-width: 300px;
+    }
+}
