@@ -35,7 +35,7 @@
                 ms</span>
         </h2>
     </div>
-    <div *ngIf="selector" class="books-container px-10 py-3 grid gap-6 lg:grid-cols-2 xl:grid-cols-3" infiniteScroll
+    <div *ngIf="selector" class="books-container px-10 py-3 grid gap-6 lg:grid-cols-2 xl:grid-cols-4" infiniteScroll
         [fromRoot]="true" [infiniteScrollContainer]="selector" [infiniteScrollDistance]="2"
         [infiniteScrollThrottle]="200" (scrolled)="onScroll()">
         <ng-container *ngFor="let book of books">
