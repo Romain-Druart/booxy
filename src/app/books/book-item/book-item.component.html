@@ -1,45 +1,7 @@
-<!-- <div class="flex items-center justify-center" *ngIf="book">
-    <div class="bg-white rounded-3xl border shadow-xl p-8 w-3/6">
-        <div class="flex justify-between items-center mb-4">
-            <div class="shrink-0 w-60">
-                <img src="{{book.cover}}">
-            </div>
-            <div class="grid gap-2">
-                <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Title</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">{{book.title}}</h1>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Language</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">{{book.language}}</h1>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Rights</h3>
-                    <h1 class="font-semibold text-sm text-gray-700">{{book.rights}}</h1>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
-                    <ul>
-                        <li *ngFor="let subject of book.subject">
-                            <h1 class="font-semibold text-sm text-gray-700">
-                                {{subject}}</h1>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-sm text-gray-400">Cover</h3>
-                    <a href="{{book.cover}}" class="font-semibold text-sm text-gray-700 link-words">
-                        {{book.cover}}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <ng-container *ngIf="book">
-    <div class="flex items-center justify-center  overflow-hidden">
-        <img class="h-64 w-48  rounded-lg shadow-black  flex-shrink-0 block" src="{{book.cover}}"
-            (click)="openDialog()">
-        <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+    <div
+        class="flex items-center justify-center overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 mt-10">
+        <img class="h-64 w-48 transition-duration: 150ms rounded-lg shadow-black  flex-shrink-0 block "
+            src="{{book.cover}}" (click)="openDialog()">
     </div>
 </ng-container>
