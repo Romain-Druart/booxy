@@ -1,7 +1,7 @@
 <div class="bg-black bg-opacity-40">
     <div class="px-4 py-5 shadow-xl sm:px-6">
-        <div class="flex justify-between">
-            <div class="flex">
+        <div class="flex items-center justify-between">
+            <div class="flex mr-3">
                 <img class="h-12 md:inline-block md:h-14 md:mb-2" src="../../assets/images/Booxy_Logo_Temp.svg">
                 <span class="hidden text-2xl font-bold text-orange-300 md:inline-block ml-2 ">Boo<span
                         class="text-white">xy</span>
@@ -17,15 +17,16 @@
                         </span>
                     </div>
                     <input (change)="searchBooks($event.target)" type="text" name="price" id="price"
-                        class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-7 pr-12 sm:text-sm border-orange-300 border-2 rounded-md">
+                        class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-8 pr-32 py-3 px sm:text-sm border-orange-300 border-2 rounded-md">
                 </div>
             </div>
             <div>
-                <!-- <button class="inline-block px-8 py-3 rounded-lg shadow-lg bg-orange-300 text-white uppercase font-semibold text-sm sm:text-base
-                        hover:bg-orange-200" (click)="addBook($event.target)">
-                    <fa-icon [icon]="faPlus"></fa-icon>&nbsp;Import
-                </button> -->
-                <div class="mt-1 relative rounded-md shadow-sm">
+                <button class="inline-block px-5 py-3 ml-2 rounded-lg shadow-lg bg-green-400 text-white uppercase font-semibold text-sm sm:text-base
+                        hover:bg-green-300 hover:-translate-y-0.5 transform transition"
+                    (click)="addBook($event.target)">
+                    <fa-icon [icon]="faPlus"></fa-icon><span class="hidden lg:inline-block">&nbsp;Import</span>
+                </button>
+                <!-- <div class="mt-1 relative rounded-md shadow-sm">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span class="text-gray-500 sm:text-sm">
                             <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
@@ -33,7 +34,7 @@
                     </div>
                     <input (change)="addBook($event.target)" type="text" name="price" id="price"
                         class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-7 pr-12 sm:text-sm border-orange-300 border-2 rounded-md">
-                </div>
+                </div> -->
             </div>
 
         </div>
