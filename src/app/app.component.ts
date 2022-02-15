@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IBook } from './books/book.model';
+import { BooksService } from './books/books.service';
 
 
 @Component({
@@ -12,11 +13,13 @@ export class AppComponent {
   nbHits: number | null;
   times: number | null;
   books: IBook[] | null;
+  query: string | null;
 
-  constructor() {
+  constructor(private booksService: BooksService) {
     this.nbHits = null
     this.times = null;
     this.books = null;
+    this.query = '';
   }
 
   /**
@@ -31,4 +34,9 @@ export class AppComponent {
   updateBooks(value: any) {
     this.books = value;
   }
+  updateQuery(value: any) {
+    this.query = value;
+  }
+
+
 }
