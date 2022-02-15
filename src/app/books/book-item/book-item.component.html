@@ -38,6 +38,8 @@
 
 <ng-container *ngIf="book">
     <div class="flex items-center justify-center  overflow-hidden">
-        <img class="h-64 w-48  rounded-lg shadow-black  flex-shrink-0 block" src="{{book.cover}}">
+        <img class="h-64 w-48  rounded-lg shadow-black  flex-shrink-0 block" src="{{book.cover}}"
+            (click)="openDialog()">
+        <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
     </div>
 </ng-container>

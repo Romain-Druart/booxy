@@ -12,6 +12,7 @@ import { BookItemComponent } from './books/book-item/book-item.component';
 import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -19,7 +20,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { BookDetailsComponent } from '../book-details/book-details.component';
 import { IBook } from '../book.model';
 import { BooksService } from '../books.service';
 

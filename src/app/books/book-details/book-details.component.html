@@ -1,0 +1,43 @@
+<div mat-dialog-content>
+    <div mat-dialog-actions align="end">
+        <button
+            class="bg-transparent hover:bg-orange-400 text-orange-700 font-semibold hover:text-white py-2 px-4 border border-orange-400 hover:border-transparent rounded"
+            (click)="closeDialog() ">
+            x
+        </button>
+    </div>
+    <div class="flex justify-between items-center mb-4">
+        <div class="hidden lg:inline-block shrink-0 w-60">
+            <img src="{{data.bookCover}}">
+        </div>
+        <div class="grid gap-2">
+            <div>
+                <h3 class="font-semibold text-sm text-gray-400">Title</h3>
+                <h1 class="font-semibold text-sm text-gray-700">{{data.bookName}}</h1>
+            </div>
+            <div>
+                <h3 class="font-semibold text-sm text-gray-400">Language</h3>
+                <h1 class="font-semibold text-sm text-gray-700">{{data.bookLanguage}}</h1>
+            </div>
+            <div>
+                <h3 class="font-semibold text-sm text-gray-400">Rights</h3>
+                <h1 class="font-semibold text-sm text-gray-700">{{data.bookRights}}</h1>
+            </div>
+            <div>
+                <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
+                <ul>
+                    <h1 class="font-semibold text-sm text-gray-700">
+                        {{data.bookSubject}}</h1>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-sm text-gray-400">Cover</h3>
+                <a href="{{data.bookCover}}" class="font-semibold text-sm text-gray-700 link-words text-ellipsis">
+                    Cover </a>
+                <span class="text-gray-500 sm:text-sm">
+                    <fa-icon [icon]="faShareFromSquare"></fa-icon>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
