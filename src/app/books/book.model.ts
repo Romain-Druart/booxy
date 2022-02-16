@@ -4,6 +4,13 @@ export interface IBook {
     cover?: string;
     rights?: string;
     subject?: string[];
+    _formatted?: {
+        title?: string,
+        language?: string;
+        cover?: string;
+        rights?: string;
+        subject?: string[];
+    }
 }
 
 export interface ISearchHits {
@@ -14,5 +21,4 @@ export interface ISearchHits {
     offset?: number;
     processingTimeMs?: number;
     query?: string;
-    _formatted?: any;
 }

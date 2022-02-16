@@ -13,31 +13,43 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class BookItemComponent implements OnInit {
 
   @Input() book?: IBook | null;
+  bookTitle: string | undefined;
 
   constructor(
     public dialog: MatDialog,
     private deviceService: DeviceDetectorService) {
+    if (this.book && this.book._formatted) {
+      this.bookTitle = this.book?._formatted?.title
+    } else {
+      this.bookTitle = this.book?.title
+    }
+    console.log(this.bookTitle);
   }
 
   isMobile = this.deviceService.isMobile();
   ngOnInit(): void {
+
   }
 
   openDialog() {
 
     //let dialogRef = this.dialog.open(BookDetailsComponent, this.config);
+    if (this.bookTitle != undefined) {
+      let dialogRef = this.dialog.open(BookDetailsComponent, {
+        data: {
+          bookName: this.bookTitle,
+          bookLanguage: this.book?.language,
+          bookCover: this.book?.cover,
+          bookSubject: this.book?.subject,
+          bookRights: this.book?.rights,
+          isDeviceMobile: this.isMobile,
+          bookSearched: this.book?._formatted
+        },
+        panelClass: "dialog-responsive"
+      });
+    }
 
-    let dialogRef = this.dialog.open(BookDetailsComponent, {
-      data: {
-        bookName: this.book?.title,
-        bookLanguage: this.book?.language,
-        bookCover: this.book?.cover,
-        bookSubject: this.book?.subject,
-        bookRights: this.book?.rights,
-        isDeviceMobile: this.isMobile
-      },
-      panelClass: "dialog-responsive"
-    });
+
   }
 
   closeDialog() {
