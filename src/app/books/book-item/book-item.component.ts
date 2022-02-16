@@ -39,24 +39,26 @@ export class BookItemComponent implements OnInit {
       this.booksService.updateRankBook(this.book.id).subscribe(resp => {
         if (resp.body) {
           let data = {}
-          if (resp.body._formatted) {
+          if (this.book?._formatted) {
             data = {
-              bookName: resp.body._formatted.title,
-              bookLanguage: resp.body._formatted.language,
-              bookCover: resp.body._formatted.cover,
-              bookSubject: resp.body._formatted.subject,
-              bookRights: resp.body._formatted.rights,
-              bookRank: resp.body._formatted.download,
-              bookId: resp.body._formatted.id
+              bookName: this.book?._formatted.title,
+              bookLanguage: this.book?.language,
+              bookCover: this.book?.cover,
+              bookSubject: this.book?.subject,
+              bookRights: this.book?.rights,
+              bookRank: this.book?.download,
+              bookId: this.book?.id,
+              isDeviceMobile: this.isMobile
             }
           } else {
             data = {
-              bookName: resp.body.title,
-              bookLanguage: resp.body.language,
-              bookCover: resp.body.cover,
-              bookSubject: resp.body.subject,
-              bookRights: resp.body.rights,
+              bookName: this.book?.title,
+              bookLanguage: this.book?.language,
+              bookCover: this.book?.cover,
+              bookSubject: this.book?.subject,
+              bookRights: this.book?.rights,
               bookRank: resp.body.download,
+              bookId: this.book?.id,
               isDeviceMobile: this.isMobile
             }
           }

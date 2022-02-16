@@ -1,0 +1,24 @@
+<div mat-dialog-container>
+    <div mat-dialog-container align="center">
+        <h1 class="text-white justify-between content-between">Ajouter un nouveau livre</h1>
+
+    </div>
+    <div class="mt-1 relative rounded-md shadow-sm">
+        <input type="text" [formControl]="newBook"
+            class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full pl-8 pr-32 py-3 mt-4 px sm:text-sm border-orange-300 border-2 rounded-md text-white"
+            placeholder="Entrez l'id du livre à ajouter">
+        <div mat-dialog-container align="center" class="">
+            <button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-transparent mr-2 mt-4 hover:bg-orange-400 text-orange-200 font-semibold hover:text-white py-2 px-4 border border-orange-400 hover:border-transparent rounded"
+                (click)="closeDialog() ">
+                <span>Fermer</span>
+            </button>
+            <button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-transparent ml-2 mt-4 hover:bg-orange-400 text-orange-200 font-semibold hover:text-white py-2 px-4 border border-orange-400 hover:border-transparent rounded"
+                (click)="addBook(); closeDialog()">
+                <fa-icon [icon]="faFloppyDisk"></fa-icon>
+                <span> Ajouter</span>
+            </button>
+        </div>
+    </div>
+</div>
