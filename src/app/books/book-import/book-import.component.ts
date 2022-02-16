@@ -40,6 +40,7 @@ export class BookImportComponent implements OnInit {
           duration: this.durationInSeconds * 1000,
           announcementMessage: "Livre ajouté avec succès!"
         });
+        this.closeDialog();
       })
     }
   }
