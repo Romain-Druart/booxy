@@ -10,6 +10,8 @@ export interface IBook {
         cover?: string;
         rights?: string;
         subject?: string[];
+        download?: string;
+        id?: string;
     }
     id?: number;
     download?: number;

@@ -8,13 +8,21 @@
 
 .dialog-responsive {
     width: 50%;
-    height: 50%;
+    height: 55%;
 }
 
 @media only screen and (max-width: 1024px) {
     .dialog-responsive {
         width: 70%;
-        height: 50%;
+        height: 55%;
         min-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 764px) {
+    .dialog-responsive {
+        width: 70%;
+        height: 75%;
+        min-height: 300px;
     }
 }

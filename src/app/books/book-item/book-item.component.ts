@@ -38,8 +38,19 @@ export class BookItemComponent implements OnInit {
     if (this.book && this.book.id) {
       this.booksService.updateRankBook(this.book.id).subscribe(resp => {
         if (resp.body) {
-          let dialogRef = this.dialog.open(BookDetailsComponent, {
-            data: {
+          let data = {}
+          if (resp.body._formatted) {
+            data = {
+              bookName: resp.body._formatted.title,
+              bookLanguage: resp.body._formatted.language,
+              bookCover: resp.body._formatted.cover,
+              bookSubject: resp.body._formatted.subject,
+              bookRights: resp.body._formatted.rights,
+              bookRank: resp.body._formatted.download,
+              bookId: resp.body._formatted.id
+            }
+          } else {
+            data = {
               bookName: resp.body.title,
               bookLanguage: resp.body.language,
               bookCover: resp.body.cover,
@@ -47,8 +58,11 @@ export class BookItemComponent implements OnInit {
               bookRights: resp.body.rights,
               bookRank: resp.body.download,
               isDeviceMobile: this.isMobile
-            },
-            panelClass: "dialog-responsive"
+            }
+          }
+
+          let dialogRef = this.dialog.open(BookDetailsComponent, {
+            data: data, panelClass: "dialog-responsive"
           });
         }
 

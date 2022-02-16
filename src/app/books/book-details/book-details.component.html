@@ -6,29 +6,28 @@
             x
         </button>
     </div>
-    <div class="flex justify-between items-center mb-4">
+    <div class="flex justify-start items-center mb-4">
         <div class="hidden rounded-lg lg:inline-block shrink-0 w-60">
             <img src="{{data.bookCover}}">
         </div>
         <div class="grid gap-2">
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Title</h3>
-                <h1 class="font-semibold text-sm text-gray-700" innerHTML="data.bookName"></h1>
+                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookName}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Language</h3>
-                <h1 class="font-semibold text-sm text-gray-700">{{data.bookLanguage}}</h1>
+                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookLanguage}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Rights</h3>
-                <h1 class="font-semibold text-sm text-gray-700">{{data.bookRights}}</h1>
+                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookRights}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
                 <ul>
                     <li *ngFor="let subject of data.bookSubject">
-                        <h1 class="font-semibold text-sm text-gray-700">
-                            {{subject}}</h1>
+                        <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{subject}}"></h1>
                     </li>
                 </ul>
             </div>
