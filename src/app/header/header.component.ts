@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faMagnifyingGlass, faCodeFork, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IBook } from '../books/book.model';
 import { BooksService } from '../books/books.service';
@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   faMagnifyingGlass: any = faMagnifyingGlass;
   faCodeFork: any = faCodeFork;
   faPlus: any = faPlus;
+  @Input() filters?: string[];
   @Output() books = new EventEmitter<IBook[]>();
   @Output() nbHits = new EventEmitter<number>();
   @Output() times = new EventEmitter<number>();

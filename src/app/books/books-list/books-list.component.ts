@@ -15,6 +15,7 @@ export class BooksListComponent implements OnInit {
   @Input() nbHits?: number | null;
   @Input() times?: number | null;
   @Input() query?: string | null;
+  @Input() filters?: string[];
   selector: string;
   offset: number | null;
 
@@ -32,7 +33,7 @@ export class BooksListComponent implements OnInit {
     if (this.query != undefined) {
       if (this.offset != undefined) {
         this.offset += 20;
-        this.booksService.search(this.query, this.offset).subscribe(resp => {
+        this.booksService.search(this.query, this.offset, this.filters ? this.filters : undefined).subscribe(resp => {
           if (resp.body?.nbHits) {
             if (resp.body?.hits) this.books = this.books?.concat(resp.body.hits);
             if (resp.body?.processingTimeMs) this.times = resp.body.processingTimeMs;

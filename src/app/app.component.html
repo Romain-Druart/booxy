@@ -1,4 +1,6 @@
 <app-header (books)="updateBooks($event)" (times)="updateTimes($event)" (nbHits)="updateNbHits($event)"
     (query)="updateQuery($event)"></app-header>
-<books [books]="books" [times]="times" [nbHits]="nbHits" [query]='query'>
+<advance-search (books)="updateBooks($event)" (times)="updateTimes($event)" (nbHits)="updateNbHits($event)"
+    (query)="updateQuery($event)" (filters)="updateFilter($event)"></advance-search>
+<books [books]="books" [times]="times" [nbHits]="nbHits" [query]='query' [filters]="filters">
 </books>

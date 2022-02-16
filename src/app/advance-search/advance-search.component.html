@@ -1,1 +1,39 @@
-<p>advance-search works!</p>
+<div class="flex items-center justify-between px-8">
+    <div>
+        <label class="text-orange-300" for="keyword">Keyword</label>
+        <input [(ngModel)]="currentQuery" type="text" name="query" id="query"
+            class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full px-14 py-3 px sm:text-sm border-orange-300 border-2 rounded-md">
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{currentAuthor}}</mat-label>
+        <mat-select [(ngModel)]="currentAuthor">
+            <mat-option *ngFor="let author of authors" [value]="author">
+                {{author}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{currentSubject}}</mat-label>
+        <mat-select [(ngModel)]="currentSubject">
+            <mat-option *ngFor="let subject of subjects" [value]="subject">
+                {{subject}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{currentLanguage}}</mat-label>
+        <mat-select [(ngModel)]="currentLanguage">
+            <mat-option *ngFor="let language of languages" [value]="language">
+                {{language}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="inline-block px-5 py-3 ml-2 rounded-lg shadow-lg bg-orange-300 text-white uppercase font-semibold text-sm sm:text-base
+                        hover:bg-orange-300 hover:-translate-y-0.5 transform transition" (click)="search()">
+        <span class="hidden lg:inline-block">&nbsp;Rechercher</span>
+    </button>
+</div>

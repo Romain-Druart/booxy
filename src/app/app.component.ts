@@ -14,12 +14,14 @@ export class AppComponent {
   times: number | null;
   books: IBook[] | null;
   query: string | null;
+  filters: string[];
 
   constructor(private booksService: BooksService) {
     this.nbHits = null
     this.times = null;
     this.books = null;
     this.query = '';
+    this.filters = [];
   }
 
   /**
@@ -36,6 +38,9 @@ export class AppComponent {
   }
   updateQuery(value: any) {
     this.query = value;
+  }
+  updateFilter(value: any) {
+    this.filters = value;
   }
 
 

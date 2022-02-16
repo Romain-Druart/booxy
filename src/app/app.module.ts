@@ -11,12 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AdvanceSearchComponent } from './advance-search/advance-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    AdvanceSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,12 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     BooksModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

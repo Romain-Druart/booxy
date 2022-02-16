@@ -13,6 +13,7 @@ export class BooksComponent implements OnInit {
   @Input() nbHits?: number | null;
   @Input() times?: number | null;
   @Input() query?: string | null;
+  @Input() filters?: string[];
 
   constructor(private booksService: BooksService) {
 
