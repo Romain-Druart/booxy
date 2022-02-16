@@ -26,3 +26,9 @@ export interface ISearchHits {
     processingTimeMs?: number;
     query?: string;
 }
+
+export interface IFacet {
+    subject: string[];
+    author: string[];
+    language: string[];
+}

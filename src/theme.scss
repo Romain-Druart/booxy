@@ -1,0 +1,50 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$booxy-orange: (
+    50 : #fff7ee,
+    100 : #feead5,
+    200 : #feddba,
+    300 : #fecf9e,
+    400 : #fdc489,
+    500 : #fdba74,
+    600 : #fdb36c,
+    700 : #fcab61,
+    800 : #fca357,
+    900 : #fc9444,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff2e8,
+    A700 : #ffe3cf,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-primary: mat.define-palette($booxy-orange);
+$my-accent: mat.define-palette($booxy-orange);
+
+$my-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ )
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);

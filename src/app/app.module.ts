@@ -15,8 +15,10 @@ import { BookImportComponent } from './books/book-import/book-import.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BookAlertComponent } from './books/book-alert/book-alert.component';
 import { } from '@angular/material/snack-bar';
+import { AdvanceSearchComponent } from './advance-search/advance-search.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { } from '@angular/material/snack-bar';
     AppComponent,
     HeaderComponent,
     BookImportComponent,
+    AdvanceSearchComponent
 
   ],
   imports: [
@@ -37,7 +40,11 @@ import { } from '@angular/material/snack-bar';
     HttpClientModule,
     InfiniteScrollModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

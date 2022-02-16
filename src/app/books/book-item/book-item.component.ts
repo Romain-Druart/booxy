@@ -20,12 +20,7 @@ export class BookItemComponent implements OnInit {
     public dialog: MatDialog,
     private deviceService: DeviceDetectorService,
     private booksService: BooksService) {
-    if (this.book && this.book._formatted) {
-      this.bookTitle = this.book?._formatted?.title
-    } else {
-      this.bookTitle = this.book?.title
-    }
-    console.log(this.bookTitle);
+
   }
 
   isMobile = this.deviceService.isMobile();
