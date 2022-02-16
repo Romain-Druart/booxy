@@ -26,8 +26,10 @@
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
                 <ul>
-                    <h1 class="font-semibold text-sm text-gray-700">
-                        {{data.bookSubject}}</h1>
+                    <li *ngFor="let subject of data.bookSubject">
+                        <h1 class="font-semibold text-sm text-gray-700">
+                            {{subject}}</h1>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -37,6 +39,10 @@
                 <span class="text-gray-500 sm:text-sm">
                     <fa-icon [icon]="faShareFromSquare"></fa-icon>
                 </span>
+            </div>
+            <div *ngIf="data.bookRank">
+                <h3 class="font-semibold text-sm text-gray-400">Rank</h3>
+                <h1 class="font-semibold text-sm text-gray-700">{{data.bookRank}}</h1>
             </div>
         </div>
     </div>

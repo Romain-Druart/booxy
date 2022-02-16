@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SERVER_LOCAL_API } from '../app.constants';
+import { SERVER_LOCAL_FLASK, SERVER_LOCAL_MEILISEARCH } from '../app.constants';
 import { IBook, ISearchHits } from './book.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-  resourceUrl = SERVER_LOCAL_API + 'indexes/books/';
+  resourceUrlBooks = SERVER_LOCAL_MEILISEARCH + 'indexes/books/';
+  resourceUrlRank = SERVER_LOCAL_FLASK + 'api/add-rank/';
+  resourceUrlAddBook = SERVER_LOCAL_FLASK + 'api/add-book/';
+
 
   constructor(private readonly http: HttpClient) { }
 
@@ -43,8 +46,24 @@ export class BooksService {
       }
     }
 
-    return this.http.post<ISearchHits>(`${this.resourceUrl}/search`, body, {
+    return this.http.post<ISearchHits>(`${this.resourceUrlBooks}/search`, body, {
       observe: 'response',
     });
+  }
+
+  /***
+   * Mise à jour du rank (score) pour un livre
+   */
+  updateRankBook(id: number): Observable<HttpResponse<IBook>> {
+    return this.http.get(`${this.resourceUrlRank}${id}`, { observe: 'response' });
+  }
+
+  /**
+   * Ajoute un livre à l'index 
+   * @param id 
+   * @returns 
+   */
+  add(id: number): Observable<HttpResponse<any>> {
+    return this.http.get<any>(`${this.resourceUrlAddBook}${id}`, { observe: 'response' });
   }
 }
