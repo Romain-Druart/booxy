@@ -6,17 +6,20 @@ import { BooksComponent } from './books.component';
 import { BooksService } from './books.service';
 import { MatDialogModule } from '@angular/material/dialog'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
     imports: [
         CommonModule,
         MatDialogModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        FontAwesomeModule
     ],
     providers: [BooksService],
-    declarations: [BooksComponent, BookItemComponent, BooksListComponent],
-    exports: [BooksComponent, BookItemComponent, BooksListComponent],
+    declarations: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent],
+    exports: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent],
 
 })
 export class BooksModule { }
