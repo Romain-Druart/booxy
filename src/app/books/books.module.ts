@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BookAlertComponent } from './book-alert/book-alert.component';
 
 
 @NgModule({
@@ -18,8 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         FontAwesomeModule
     ],
     providers: [BooksService],
-    declarations: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent],
-    exports: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent],
+    declarations: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent, BookAlertComponent],
+    exports: [BooksComponent, BookItemComponent, BooksListComponent, BookDetailsComponent, BookAlertComponent],
 
 })
 export class BooksModule { }

@@ -3,9 +3,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faMagnifyingGlass, faCodeFork, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IBook } from '../books/book.model';
 import { BooksService } from '../books/books.service';
+import { BookImportComponent } from '../books/book-import/book-import.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BookAlertComponent } from '../books/book-alert/book-alert.component';
 
+
+export interface DialogData {
+  newBook: string;
+}
 
 @Component({
+  providers: [
+    MatSnackBar
+  ],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
@@ -22,7 +33,13 @@ export class HeaderComponent implements OnInit {
   @Output() query = new EventEmitter<string>();
   @Output() isShow = new EventEmitter<boolean>();
 
-  constructor(private booksService: BooksService) {
+  newBook: string = "";
+  durationInSeconds = 5;
+
+  constructor(
+    private booksService: BooksService,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog,) {
   }
 
   ngOnInit(): void {
@@ -40,19 +57,17 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  /**
-   * Ajoute un livre à l'index 
-   * @param event 
-   */
-  addBook(event: EventTarget | null) {
-    if (event) {
-      const target = event as HTMLInputElement;
-      if (target.value && target.value != ' ') {
-        this.booksService.add(parseInt(target.value)).subscribe(resp => {
-          this.getBooks();
-        })
-      }
-    }
+  openImportDialog() {
+    let dialogRef = this.dialog.open(BookImportComponent, {
+      panelClass: "dialog-responsive",
+      height: "200px",
+      data: { newBook: this.newBook }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.newBook = result;
+    });
   }
 
 
@@ -68,7 +83,6 @@ export class HeaderComponent implements OnInit {
           if (resp.body?.nbHits) this.nbHits.emit(resp.body.nbHits);
           if (resp.body?.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
           this.query.emit(target.value);
-
         })
       } else if (target.value === '') {
         this.booksService.search('').subscribe(resp => {
@@ -82,6 +96,4 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
-
-
 }

@@ -29,6 +29,7 @@ export class BookDetailsComponent implements OnInit {
 
   closeDialog() {
     this.dialog.closeAll();
+
   }
 
 }
