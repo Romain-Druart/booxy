@@ -13,9 +13,10 @@ mat-dialog-container{
     height: 55%;
 }
 
-.em{
-    color: yellow;
-    font-weight: bold;
+em{
+    // color: yellow;
+    // font-weight: bold;
+    color: #ffc500;  /* fallback for old browsers */
 }
 
 @media only screen and (max-width: 1024px) {
