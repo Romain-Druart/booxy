@@ -43,6 +43,7 @@ export class BookItemComponent implements OnInit {
               bookRights: this.book?.rights,
               bookRank: this.book?.download,
               bookId: this.book?.id,
+              bookText: this.book?.book,
               isDeviceMobile: this.isMobile
             }
           } else {
@@ -54,6 +55,7 @@ export class BookItemComponent implements OnInit {
               bookRights: this.book?.rights,
               bookRank: resp.body.download,
               bookId: this.book?.id,
+              bookText: this.book?.book,
               isDeviceMobile: this.isMobile
             }
           }

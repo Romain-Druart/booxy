@@ -1,39 +1,53 @@
-<div class="flex items-center justify-between px-8">
-    <div>
-        <label class="text-orange-300" for="keyword">Keyword</label>
-        <input [(ngModel)]="currentQuery" type="text" name="query" id="query"
-            class="focus:ring-orange-300 focus:border-orange-300 bg-slate-800 block w-full px-14 py-3 px sm:text-sm border-orange-300 border-2 rounded-md">
-    </div>
-
-    <mat-form-field appearance="fill">
-        <mat-label>{{currentAuthor}}</mat-label>
-        <mat-select [(ngModel)]="currentAuthor" placeholder="Auteur">
-            <mat-option *ngFor="let author of authors" [value]="author">
-                {{author}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>{{currentSubject}}</mat-label>
-        <mat-select [(ngModel)]="currentSubject" placeholder="Sujet">
-            <mat-option *ngFor="let subject of subjects" [value]="subject">
-                {{subject}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>{{currentLanguage}}</mat-label>
-        <mat-select [(ngModel)]="currentLanguage" placeholder="Language">
-            <mat-option *ngFor="let language of languages" [value]="language">
-                {{language}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <button class="inline-block px-5 py-3 ml-2 rounded-lg shadow-lg bg-orange-300 text-white uppercase font-semibold text-sm sm:text-base
-                        hover:bg-orange-300 hover:-translate-y-0.5 transform transition" (click)="search()">
-        <span class="hidden lg:inline-block">&nbsp;Rechercher</span>
-    </button>
+<div class="flex justify-center items-center mt-5">
+    <a (click)="showAdvanceSearch()"><span class="text-orange-300">Recherche avancée&nbsp;&nbsp;<fa-icon
+                [icon]="isShow ? faArrowUp : faArrowDown"></fa-icon></span></a>
 </div>
+<ng-container *ngIf="isShow">
+    <div class="block lg:flex lg:items-center lg:justify-between px-8 mt-2">
+        <div class="block">
+            <label class="text-orange-300" for="keyword">Mot clé</label>
+            <input [(ngModel)]="currentQuery" type="text" name="query" id="query"
+                class="focus:ring-orange-300 mb-5 focus:border-orange-300 text-white bg-slate-800 block w-full px-9 py-3 px sm:text-sm border-orange-300 border-2 rounded-md">
+        </div>
+
+        <div class="lg:px-2">
+            <mat-form-field appearance="fill">
+                <mat-label>Auteur</mat-label>
+                <mat-select [(ngModel)]="currentAuthor">
+                    <mat-option [value]="">Aucun</mat-option>
+                    <mat-option *ngFor="let author of authors" [value]="author">
+                        {{author}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="lg:px-2">
+            <mat-form-field appearance="fill">
+                <mat-label>Sujet</mat-label>
+                <mat-select [(ngModel)]="currentSubject">
+                    <mat-option [value]="">Aucun</mat-option>
+                    <mat-option *ngFor="let subject of subjects" [value]="subject">
+                        {{subject}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="lg:px-2">
+            <mat-form-field appearance="fill">
+                <mat-label>Langue</mat-label>
+                <mat-select [(ngModel)]="currentLanguage">
+                    <mat-option [value]="">Aucun</mat-option>
+                    <mat-option *ngFor="let language of languages" [value]="language">
+                        {{language}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button class="inline-block px-5 py-3 ml-2 rounded-lg shadow-lg bg-orange-300 text-white uppercase font-semibold text-sm sm:text-base
+                        hover:bg-orange-300 hover:-translate-y-0.5 transform transition" (click)="search()">
+            <span class="">&nbsp;Rechercher</span>
+        </button>
+    </div>
+</ng-container>

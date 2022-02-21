@@ -15,6 +15,7 @@ export class AppComponent {
   books: IBook[] | null;
   query: string | null;
   filters: string[];
+  isShow: boolean | null;
 
   constructor(private booksService: BooksService) {
     this.nbHits = null
@@ -22,6 +23,7 @@ export class AppComponent {
     this.books = null;
     this.query = '';
     this.filters = [];
+    this.isShow = null;
   }
 
   /**
@@ -42,6 +44,9 @@ export class AppComponent {
   updateFilter(value: any) {
     this.filters = value;
   }
-
+  updateShow(value: any) {
+    console.log(value)
+    this.isShow = value;
+  }
 
 }

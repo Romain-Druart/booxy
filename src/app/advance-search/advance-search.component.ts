@@ -1,7 +1,7 @@
 import { query } from '@angular/animations';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowUp, faChevronDown, faChevronUp, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IBook } from '../books/book.model';
 import { BooksService } from '../books/books.service';
 
@@ -16,6 +16,7 @@ export class AdvanceSearchComponent implements OnInit {
   @Output() nbHits = new EventEmitter<number>();
   @Output() filters = new EventEmitter<string[]>();
   @Output() query = new EventEmitter<string>();
+  isShow: boolean | null;
 
   subjects: string[];
   authors: string[];
@@ -27,7 +28,8 @@ export class AdvanceSearchComponent implements OnInit {
   currentQuery: string;
 
   faPlus: any = faPlus;
-
+  faArrowDown: any = faChevronDown;
+  faArrowUp: any = faChevronUp;
 
   constructor(private fb: FormBuilder, private booksService: BooksService) {
     this.subjects = [];
@@ -37,6 +39,7 @@ export class AdvanceSearchComponent implements OnInit {
     this.currentLanguage = '';
     this.currentSubject = '';
     this.currentQuery = '';
+    this.isShow = false;
   }
 
   ngOnInit(): void {
@@ -91,6 +94,7 @@ export class AdvanceSearchComponent implements OnInit {
         if (resp.body.processingTimeMs) this.times.emit(resp.body.processingTimeMs);
         this.filters.emit(filter);
         if (query != '') this.query.emit(query)
+        this.isShow = false;
       }
     })
   }
@@ -100,5 +104,9 @@ export class AdvanceSearchComponent implements OnInit {
     this.currentLanguage = "";
     this.currentSubject = "";
     this.currentQuery = "";
+  }
+
+  showAdvanceSearch() {
+    this.isShow = !this.isShow;
   }
 }

@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
   @Output() nbHits = new EventEmitter<number>();
   @Output() times = new EventEmitter<number>();
   @Output() query = new EventEmitter<string>();
+  @Output() isShow = new EventEmitter<boolean>();
 
   newBook: string = "";
   durationInSeconds = 5;
