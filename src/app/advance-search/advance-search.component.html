@@ -7,7 +7,7 @@
 
     <mat-form-field appearance="fill">
         <mat-label>{{currentAuthor}}</mat-label>
-        <mat-select [(ngModel)]="currentAuthor">
+        <mat-select [(ngModel)]="currentAuthor" placeholder="Auteur">
             <mat-option *ngFor="let author of authors" [value]="author">
                 {{author}}
             </mat-option>
@@ -16,7 +16,7 @@
 
     <mat-form-field appearance="fill">
         <mat-label>{{currentSubject}}</mat-label>
-        <mat-select [(ngModel)]="currentSubject">
+        <mat-select [(ngModel)]="currentSubject" placeholder="Sujet">
             <mat-option *ngFor="let subject of subjects" [value]="subject">
                 {{subject}}
             </mat-option>
@@ -25,7 +25,7 @@
 
     <mat-form-field appearance="fill">
         <mat-label>{{currentLanguage}}</mat-label>
-        <mat-select [(ngModel)]="currentLanguage">
+        <mat-select [(ngModel)]="currentLanguage" placeholder="Language">
             <mat-option *ngFor="let language of languages" [value]="language">
                 {{language}}
             </mat-option>

@@ -13,27 +13,27 @@
         <div class="grid gap-2">
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Title</h3>
-                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookName}}"></h1>
+                <h1 class="font-semibold text-sm text-white" innerHTML="{{data.bookName}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Language</h3>
-                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookLanguage}}"></h1>
+                <h1 class="font-semibold text-sm text-white" innerHTML="{{data.bookLanguage}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Rights</h3>
-                <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{data.bookRights}}"></h1>
+                <h1 class="font-semibold text-sm text-white" innerHTML="{{data.bookRights}}"></h1>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Subject</h3>
                 <ul>
                     <li *ngFor="let subject of data.bookSubject">
-                        <h1 class="font-semibold text-sm text-gray-700" innerHTML="{{subject}}"></h1>
+                        <h1 class="font-semibold text-sm text-white" innerHTML="{{subject}}"></h1>
                     </li>
                 </ul>
             </div>
             <div>
                 <h3 class="font-semibold text-sm text-gray-400">Cover</h3>
-                <a href="{{data.bookCover}}" class="font-semibold text-sm text-gray-700 link-words text-ellipsis">
+                <a href="{{data.bookCover}}" class="font-semibold text-sm text-white link-words text-ellipsis">
                     Cover </a>
                 <span class="text-gray-500 sm:text-sm">
                     <fa-icon [icon]="faShareFromSquare"></fa-icon>
