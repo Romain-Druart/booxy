@@ -43,12 +43,12 @@
                 <h3 class="font-semibold text-sm text-gray-400">Rank</h3>
                 <h1 class="font-semibold text-sm text-white">{{data.bookRank}}</h1>
             </div>
-
+            <div *ngIf="data.bookText">
+                <h3 class="font-semibold text-sm text-gray-400">Text</h3>
+                <a href='https://www.gutenberg.org/files/{{data.bookId}}/{{data.bookId}}-h/{{data.bookId}}-h.htm'
+                    class="font-semibold text-sm text-gray-700">https://www.gutenberg.org/files/{{data.bookId}}/{{data.bookId}}-h/{{data.bookId}}-h.htm
+                </a>
+            </div>
         </div>
-    </div>
-
-    <div *ngIf="data.bookText">
-        <h3 class="font-semibold text-sm text-gray-400">Text</h3>
-        <p class="font-semibold text-sm text-white">{{data.bookText}}</p>
     </div>
 </div>
