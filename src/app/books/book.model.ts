@@ -12,9 +12,11 @@ export interface IBook {
         subject?: string[];
         download?: string;
         id?: string;
+        book?: string;
     }
     id?: number;
     download?: number;
+    book?: string;
 }
 
 export interface ISearchHits {
