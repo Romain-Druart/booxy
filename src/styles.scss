@@ -13,6 +13,11 @@ mat-dialog-container{
     height: 55%;
 }
 
+.em{
+    color: yellow;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 1024px) {
     .dialog-responsive {
         width: 70%;
