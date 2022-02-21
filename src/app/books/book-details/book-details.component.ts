@@ -22,6 +22,7 @@ export class BookDetailsComponent implements OnInit {
     bookRights: string,
     bookRank: string,
     bookText: string,
+    bookId: string,
     isDeviceMobile: boolean
   }, private dialog: MatDialog) { }
 
