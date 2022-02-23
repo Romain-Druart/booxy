@@ -16,7 +16,6 @@ import { BookAlertComponent } from '../book-alert/book-alert.component';
 })
 export class BookImportComponent implements OnInit {
 
-
   faFloppyDisk: any = faFloppyDisk;
   faCodeFork: any = faCodeFork;
   newBook: any = new FormControl('')

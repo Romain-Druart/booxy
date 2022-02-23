@@ -37,13 +37,13 @@ export class BookItemComponent implements OnInit {
           if (this.book?._formatted) {
             data = {
               bookName: this.book?._formatted.title,
-              bookLanguage: this.book?.language,
-              bookCover: this.book?.cover,
-              bookSubject: this.book?.subject,
-              bookRights: this.book?.rights,
-              bookRank: this.book?.download,
-              bookId: this.book?.id,
-              bookText: this.book?.book,
+              bookLanguage: this.book?._formatted.language,
+              bookCover: this.book?._formatted.cover,
+              bookSubject: this.book?._formatted.subject,
+              bookRights: this.book?._formatted.rights,
+              bookRank: this.book?._formatted.download,
+              bookId: this.book?._formatted.id,
+              bookText: this.book?._formatted.book,
               isDeviceMobile: this.isMobile
             }
           } else {

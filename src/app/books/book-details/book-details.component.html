@@ -35,7 +35,7 @@
                 <h3 class="font-semibold text-sm text-gray-400">Cover</h3>
                 <a href="{{data.bookCover}}" class="font-semibold text-sm text-white link-words text-ellipsis">
                     Cover </a>
-                <span class="text-gray-500 sm:text-sm">
+                <span class="text-gray-200 sm:text-sm">
                     <fa-icon [icon]="faShareFromSquare"></fa-icon>
                 </span>
             </div>
@@ -46,8 +46,11 @@
             <div *ngIf="data.bookText">
                 <h3 class="font-semibold text-sm text-gray-400">Text</h3>
                 <a href='https://www.gutenberg.org/files/{{data.bookId}}/{{data.bookId}}-h/{{data.bookId}}-h.htm'
-                    class="font-semibold text-sm text-gray-700">https://www.gutenberg.org/files/{{data.bookId}}/{{data.bookId}}-h/{{data.bookId}}-h.htm
+                    class="font-semibold text-sm text-white">https://www.gutenberg.org/files/{{data.bookId}}/{{data.bookId}}-h/{{data.bookId}}-h.htm
                 </a>
+                <span class="text-gray-200 sm:text-sm">
+                    <fa-icon [icon]="faShareFromSquare"></fa-icon>
+                </span>
             </div>
         </div>
     </div>

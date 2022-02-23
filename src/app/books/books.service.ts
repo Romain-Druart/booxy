@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { SERVER_LOCAL_FLASK, SERVER_LOCAL_MEILISEARCH } from '../app.constants';
 import { IBook, IFacet, ISearchHits } from './book.model';
 
@@ -11,6 +11,8 @@ export class BooksService {
   resourceUrlBooks = SERVER_LOCAL_MEILISEARCH + 'indexes/books/';
   resourceUrlRank = SERVER_LOCAL_FLASK + 'api/add-rank/';
   resourceUrl = SERVER_LOCAL_FLASK + 'api/';
+
+  public showSpinner: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
   constructor(private readonly http: HttpClient) { }
